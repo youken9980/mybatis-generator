@@ -1,1 +1,1 @@
-# mybatis-generator-springboot
+# mybatis-generator
