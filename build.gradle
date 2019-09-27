@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
+group = 'mybatis-generator'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+[compileJava,compileTestJava,javadoc]*.options*.encoding = "UTF-8"
+
+ext {
+    lombokVersion = "1.18.10"
+    tkMybatisMapperVersion = "4.1.5"
+    tkMybatisMapperStarterVersion = "2.1.5"
+    mybatisSpringBootVersion = "2.1.0"
+    mybatisGeneratorVersion = "1.3.7"
+    mysqlConnVersion = "5.1.48"
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    runtimeOnly "mysql:mysql-connector-java:${mysqlConnVersion}"
+
+    implementation "tk.mybatis:mapper:${tkMybatisMapperVersion}"
+    implementation "tk.mybatis:mapper-spring-boot-starter:${tkMybatisMapperStarterVersion}"
+    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisSpringBootVersion}"
+    implementation "org.mybatis.generator:mybatis-generator-core:${mybatisGeneratorVersion}"
+}
