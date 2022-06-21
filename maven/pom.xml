@@ -22,7 +22,7 @@
 		<tkMybatisMapperStarterVersion>2.1.5</tkMybatisMapperStarterVersion>
 		<mybatisSpringBootVersion>2.1.0</mybatisSpringBootVersion>
 		<mybatisGeneratorVersion>1.3.7</mybatisGeneratorVersion>
-		<mysqlConnVersion>5.1.48</mysqlConnVersion>
+		<mysqlConnVersion>8.0.28</mysqlConnVersion>
 	</properties>
 
 	<dependencies>
